@@ -57,15 +57,11 @@ WSGI_APPLICATION = 'ECproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
-DATABASES = {   
-	'default': {  
-		'ENGINE': 'django.db.backends.mysql',  
-		'NAME': 'qdm216841597_db', 
-		'USER': 'qdm216841597',
-		'PASSWORD': 'HeHe12345',   
-		'HOST': 'qdm216841597.my3w.com', 
-		'PORT': '3306',  
-	}
+DATABASES = {
+    'default': {
+    'ENGINE': 'django.db.backends.sqlite3',
+    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
