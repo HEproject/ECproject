@@ -1,0 +1,5 @@
+goods_num_id 112*goods_name 'abc'*is_new True*is_hot True*is_recommend 4*is_free 'xxx'*add_date 0*brand_id 1111*goods_kind_id 1111*goods_attr_id 1111
+goods_num_id 113*goods_name 'abc'*is_new True*is_hot True*is_recommend 4*is_free 'xxx'*add_date 0*brand_id 1111*goods_kind_id 1111*goods_attr_id 1111
+goods_num_id 114*goods_name 'abc'*is_new True*is_hot True*is_recommend 4*is_free 'xxx'*add_date 0*brand_id 1111*goods_kind_id 1111*goods_attr_id 1111
+
+

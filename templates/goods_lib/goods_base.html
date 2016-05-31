@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+<!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.7/css/jquery.dataTables.css">
+ 
+<!-- jQuery -->
+    <script type="text/javascript" charset="utf8" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+<!-- DataTables -->
+    <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.js"></script>
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static '/DataTables-1.10.7/media/css/jquery.dataTables.css'%}">
+ 
+<!-- jQuery -->
+    <script type="text/javascript" charset="utf8" src="{% static '/DataTables-1.10.7/media/js/jquery.js'%}"></script>
+ 
+<!-- DataTables -->
+    <script type="text/javascript" charset="utf8" src="{% static '/DataTables-1.10.7/media/js/jquery.dataTables.js'%}"></script>
+
+
+    <script> 
+        $(document).ready( function () {
+                $('#good_color').DataTable();
+                $('#goods').DataTable();
+                $('#goods_kind').DataTable();
+                $('#good_brand').DataTable();
+        });
+    </script>
+    <title>{% block title %} title {% endblock %} - goods</title>
+</head>
+
+
+<body>
+ 
+{% block content %}
+<div>
+<ul>
+{% if request.user.is_authenticated %}
+    <li>   {{ request.user.username }}，您好！ </li>
+
+{% else %}
+    {% for key, value in info_dict.items %}
+         <li>    {{ key }}: {{ value }}    </li>
+    {% empty %}
+         <li>  empty  to  do ... </li>
+    {% endfor %}
+{% endif %}
+
+</ul>
+</div>
+
+<div>
+<ul>
+    <table id="good_color" class="display">
+        <thead>
+                <tr>
+                        <th>  goods_color_id  </th>
+                        <th>  good_color  </th>
+                </tr>
+        </thead>
+        <tbody>
+                 <tr>
+                            {% for name in clist %}
+                            <td> {{name.goods_color_id}} </td>
+                            <td> {{name.good_color}} </td>
+                            {% endfor %}
+                </tr>
+        </tbody>
+        </table>
+</div>
+</ul>
+
+
+<div>
+<ul>
+             <table id="goods" class="display">      
+             <thead>
+                         <tr>
+                                        <th>  goods_num_id </th>
+                                        <th>  goods_name  </th>
+                                        <th>  is_new </th>
+                                        <th>  is_hot  </th>
+                                        <th>  is_recommend </th>
+                                        <th>  is_free</th>
+                                        <th>  add_date  </th>
+                         </tr>
+            </thead>
+             <tbody>
+                          <tr>
+                                       {% for name in glist %}
+                                       <td> {{name.goods_num_id}} </td>
+                                       <td> {{name.goods_name}} </td>
+                                       <td> {{name.is_new}}  </td>
+                                       <td> {{name.is_hot}} </td>
+                                       <td> {{name.is_recommend}} </td>
+                                       <td> {{name.is_free}}  </td>
+                                       <td> {{name.add_date}} </td>
+                                       {% endfor %}
+                          </tr>
+                          <tr>
+                                       {% for name in glist %}
+                                       <td> {{name.goods_num_id}} </td>
+                                       <td> {{name.goods_name}} </td>
+                                       <td> {{name.is_new}}  </td>
+                                       <td> {{name.is_hot}} </td>
+                                       <td> {{name.is_recommend}} </td>
+                                       <td> {{name.is_free}}  </td>
+                                       <td> {{name.add_date}} </td>
+                                       {% endfor %}
+                          </tr>
+             </tbody>
+             </table>
+</div>
+</ul>
+
+<div>
+<ul>
+    <table id="goods_kind" class="display">
+        <thead>
+                <tr>
+                        <th>  goods_kind_id  </th>
+                        <th>  good_color  </th>
+                </tr>
+        </thead>
+        <tbody>
+                 <tr>
+                            {% for name in klist %}
+                            <td> {{name.goods_kind_id}} </td>
+                            <td> {{name.good_kind}} </td>
+                            {% endfor %}
+                </tr>
+        </tbody>
+        </table>
+</ul>
+</div>
+
+<div>
+<ul>
+    <table id="good_brand" class="display">
+        <thead>
+                <tr>
+                        <th>  brand_id  </th>
+                        <th>  brand_name  </th>
+                        <th>  brand_desc  </th>
+                        <th>  brand_imgurl  </th>
+                        <th>  is_view  </th>
+                </tr>
+        </thead>
+        <tbody>
+                 <tr>
+                            {% for name in blist %}
+                            <td> {{name.brand_id}} </td>
+                            <td> {{name.brand_name}} </td>
+                            <td> {{name.brand_desc}} </td>
+                            <td> {{name.brand_imgurl}} </td>
+                            <td> {{name.is_view}} </td>
+                            {% endfor %}
+                </tr>
+        </tbody>
+        </table>
+</ul>
+</div>
+
+
+{% endblock %}
+ 
+
+ 
+</body>
+</html>

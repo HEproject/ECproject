@@ -1,0 +1,78 @@
+<html> 
+<head> 
+<!-- DataTables CSS -->
+<link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.7/css/jquery.dataTables.css">
+ 
+<!-- jQuery -->
+<script type="text/javascript" charset="utf8" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+ 
+<!-- DataTables -->
+<script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.js"></script>
+
+
+<!-- DataTables CSS -->
+<link rel="stylesheet" type="text/css" href="/DataTables-1.10.7/css/jquery.dataTables.css">
+ 
+<!-- jQuery -->
+<script type="text/javascript" charset="utf8" src="/DataTables-1.10.0/js/jquery.js"></script>
+ 
+<!-- DataTables -->
+<script type="text/javascript" charset="utf8" src="/DataTables-1.10.7/js/jquery.dataTables.js"></script>
+
+
+<script> 
+	function Employee ( Column1, Column2) {
+		    this.Column1 = Column1;
+		    this.Column2 = Column2;
+		};
+
+	$(document).ready( function () {
+    		var table = $('#table_id').DataTable({
+ 		    data: [
+			new Employee( "Row 4 Data 1", "Row 4 Data 2"),
+			new Employee( "Row 5 Data 1", "Row 5 Data 2")
+		    ],
+		    columns: [
+			{ data: 'Column1' },
+			{ data: 'Column2' }
+		    ]
+		});
+
+		
+
+  	});
+</script>
+	<title> 1.html  </title> 
+</head>
+
+<body> 
+	     <div>
+		<span>
+  		<table id="table_id" class="display">
+		    <thead>
+			<tr>
+			    <th>Column1</th>
+			    <th>Column2</th>
+			</tr>
+		    </thead>
+
+		    <tbody>
+			<tr>
+			    <td>Row1 Data 1</td>
+			    <td>Row1 Data 2</td>
+			</tr>
+			<tr>
+			    <td>Row 2 Data 1</td>
+			    <td>Row 2 Data 2</td>
+			</tr>
+		    </tbody>
+		</table>
+		</span>
+	    </div>
+
+	
+</body>
+
+</html>
+
+
