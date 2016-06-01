@@ -95,15 +95,9 @@ html,body {
 
 
 
-    <!-- Header -->
-    <a name="about"></a>
-    <div class="intro-header">
-        <div class="container">
-
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="intro-message">
-                   <br/><br/><br/><br/><br/><br/><br/>  
+
+            <div class="intro-message">
 
 <!-- ------------------------------------------------------------------------ -->
 <div class="box">
@@ -113,9 +107,14 @@ html,body {
 				<h1><small>登录</small></h1>
 			</div>
 
+		{% if status %}
+     	 	<h1>please input correct username or password</h1>
+      	{% endif %}
+
 			<div class="login-content ">
 			<div class="form">
-			<form action="#" method="post">
+			<form action="/user/login" id="login_form" method="post" style="color:#888888">
+			{% csrf_token %}
 				<div class="form-group">
 					<div class="col-xs-12  ">
 						<div class="input-group">
@@ -145,7 +144,7 @@ html,body {
 						</p>
 					</div>
 					<div class="col-xs-6 link">
-						<p class="text-center remove-margin"><small>还没注册?</small> <a href="javascript:void(0)" ><small>注册</small></a>
+						<p class="text-center remove-margin"><small>还没注册?</small> <a href="/user/register" ><small>注册</small></a>
 						</p>
 					</div>
 
