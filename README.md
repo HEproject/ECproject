@@ -10,4 +10,5 @@ mybranch
 
 ## Buser 用户类（。。@%%#￥@）
     ---- 测试
-## hehe
+## db.sqlite3 数据库
+### testscript_ECporject.py 存放测试数据，批量给数据库添加

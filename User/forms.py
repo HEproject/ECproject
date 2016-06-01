@@ -4,7 +4,8 @@ from User.models import UserProfile
 
 
 class UserForm(forms.ModelForm):
-    username = forms.CharField(help_text="Please enter a username.")
+    username = forms.CharField(
+        help_text="Please enter a username.")
 
     password = forms.CharField(
         widget=forms.PasswordInput(), help_text="Please enter a password.")

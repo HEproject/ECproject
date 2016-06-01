@@ -17,9 +17,6 @@ def login(request):
     context_dict = {'boldmessage': "I am bold font from the context"}
     return render(request, 'page/login.html', context_dict)
 
-def test(request):
-    context_dict = {'boldmessage': "I am bold font from the context"}
-    return render(request, 'page/test.html', context_dict)
 
 def register(request):
     registered = False
@@ -51,6 +48,9 @@ def register(request):
 def base(request):
     context_dict = {'boldmessage': "I am bold font from the context"}
     return render(request, 'page/base.html', context_dict)
+def base2(request):
+    context_dict = {'boldmessage': "I am bold font from the context"}
+    return render(request, 'page/base2.html', context_dict)
 
 def user_login(request):
     context = {}
@@ -84,3 +84,7 @@ def some_view(request):
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect('/register')
+
+
+def one(request):
+    return render(request, 'page/one.html')

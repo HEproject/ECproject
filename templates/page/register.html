@@ -6,23 +6,25 @@
 
 {% block body_block %}
 
+<div align="center">
     {% if registered %}
+
         itcastsubject says: <strong>thank you for registering!</strong>
         <a href="/register/">Return to the homepage.</a><br />
     {% else %}
 
-   <div class="eightcol last">
-            <form class="form-signin span8" id="user_form" method="post" action="/user/register/"
-              enctype="multipart/form-data" style="color:#6699ee">
-            {% csrf_token %}
+    <div class="eightcol last">
+        <form class="form-signin span8" id="user_form" method="post" action="/user/register/"
+                  enctype="multipart/form-data" style="color:#6699ee">
+                {% csrf_token %}
             <h2 class="form-signin-heading" style="color:#9999ee">用户注册</h2>
-            <!-- Display each form here -->
+                <!-- Display each form here -->
 
-            {% for field in user_form.visible_fields %}
-            {{ field.errors }}
-            {{ field.help_text}}<br/>
-            {{ field }}<br/>
-            {% endfor %}
+                {% for field in user_form.visible_fields %}
+                {{ field.errors }}
+                {{ field.help_text}}<br/>
+                {{ field }}<br/>
+                {% endfor %}
 
             <label>请选择省市地区：</label></br>
                 <ul>
@@ -54,17 +56,18 @@
                 </ul>
 
 
-            {% for field in profile_form.visible_fields %}
-            {{ field.errors }}
-            {{ field.help_text}}<br/>
-            {{ field }}<br/>
-            {% endfor %}
+                {% for field in profile_form.visible_fields %}
+                {{ field.errors }}
+                {{ field.help_text}}<br/>
+                {{ field }}<br/>
+                {% endfor %}
 
-            <br/>
-            <!-- Provide a button to click to submit the form. -->
-            <input class="btn btn-primary" type="submit" name="submit" value="Register"/>
+                <br/>
+                <!-- Provide a button to click to submit the form. -->
+                <input class="btn btn-primary" type="submit" name="submit" value="Register"/>
         </form>
-    {% endif %}
     </div>
+    {% endif %}
+</div>
 
 {% endblock %}
